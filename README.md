@@ -5,9 +5,8 @@ This Terraform module allows you to set up environment variables and key-value (
 [![lint](https://github.com/flaconi/terraform-cloudflare-workers/workflows/lint/badge.svg)](https://github.com/flaconi/terraform-cloudflare-workers/actions?query=workflow%3Alint)
 [![test](https://github.com/flaconi/terraform-cloudflare-workers/workflows/test/badge.svg)](https://github.com/flaconi/terraform-cloudflare-workers/actions?query=workflow%3Atest)
 [![Tag](https://img.shields.io/github/tag/flaconi/terraform-cloudflare-workers.svg)](https://github.com/flaconi/terraform-cloudflare-workers/releases)
+[![Terraform](https://img.shields.io/badge/Terraform--registry-cloudflare--workers-brightgreen.svg)](https://registry.terraform.io/modules/flaconi/workers/cloudflare/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
-For requirements regarding module structure: [style-guide-terraform.md](https://github.com/Flaconi/devops-docs/blob/master/doc/conventions/style-guide-terraform.md)
 
 <!-- TFDOCS_HEADER_START -->
 
