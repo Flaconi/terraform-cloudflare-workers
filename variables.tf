@@ -21,12 +21,12 @@ variable "domain_name" {
 
 variable "enabled_routes" {
   description = "A list of routes enabled for worker"
-  type        = list(string)
+  type        = set(string)
 }
 
 variable "disabled_routes" {
   description = "A list of disabled routes for worker"
-  type        = list(string)
+  type        = set(string)
 }
 
 variable "worker_name" {

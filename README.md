@@ -65,13 +65,13 @@ Type: `string`
 
 Description: A list of routes enabled for worker
 
-Type: `list(string)`
+Type: `set(string)`
 
 ### <a name="input_disabled_routes"></a> [disabled\_routes](#input\_disabled\_routes)
 
 Description: A list of disabled routes for worker
 
-Type: `list(string)`
+Type: `set(string)`
 
 ### <a name="input_worker_name"></a> [worker\_name](#input\_worker\_name)
 
