@@ -11,20 +11,25 @@ variable "kv_database_names" {
 
 variable "zone_id" {
   description = "Zone ID on cloudflare for the domain"
-  type        = String
+  type        = string
+}
+
+variable "domain_name" {
+  description = "Domain name"
+  type        = string
 }
 
 variable "enabled_routes" {
-  description = "A map of routes enabled for worker"
-  type        = map(String)
+  description = "A list of routes enabled for worker"
+  type        = set(string)
 }
 
 variable "disabled_routes" {
-  description = "A map of disabled routes for worker"
-  type        = map(String)
+  description = "A list of disabled routes for worker"
+  type        = set(string)
 }
 
 variable "worker_name" {
   description = "worker name"
-  type        = String
+  type        = string
 }
