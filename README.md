@@ -18,7 +18,7 @@ This Terraform module allows you to set up environment variables and key-value (
 
 | Name | Version |
 |------|---------|
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.0 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.12.0 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -27,8 +27,8 @@ This Terraform module allows you to set up environment variables and key-value (
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.8 |
-| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.13.5 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.12.0 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
@@ -48,6 +48,30 @@ Type: `string`
 Description: A map of KV database names
 
 Type: `map(string)`
+
+### <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id)
+
+Description: Zone ID on cloudflare for the domain
+
+Type: `String`
+
+### <a name="input_enabled_routes"></a> [enabled\_routes](#input\_enabled\_routes)
+
+Description: A map of routes enabled for worker
+
+Type: `map(String)`
+
+### <a name="input_disabled_routes"></a> [disabled\_routes](#input\_disabled\_routes)
+
+Description: A map of disabled routes for worker
+
+Type: `map(String)`
+
+### <a name="input_worker_name"></a> [worker\_name](#input\_worker\_name)
+
+Description: worker name
+
+Type: `String`
 
 ## Optional Inputs
 
