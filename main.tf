@@ -5,15 +5,15 @@ resource "cloudflare_workers_kv_namespace" "this" {
 }
 
 resource "cloudflare_workers_route" "enabled" {
-  for_each = var.enabled_routes
+  for_each = toset(var.enabled_routes)
   zone_id  = var.zone_id
-  pattern  = each.value
+  pattern  = format("%s%s", var.domain_name, each.value)
   script   = var.worker_name
 }
 
 resource "cloudflare_workers_route" "disabled" {
-  for_each = var.disabled_routes
+  for_each = toset(var.disabled_routes)
   zone_id  = var.zone_id
-  pattern  = each.value
+  pattern  = format("%s%s", var.domain_name, each.value)
   script   = null
 }
