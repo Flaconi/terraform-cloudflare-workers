@@ -57,15 +57,15 @@ Type: `String`
 
 ### <a name="input_enabled_routes"></a> [enabled\_routes](#input\_enabled\_routes)
 
-Description: A map of routes enabled for worker
+Description: A list of routes enabled for worker
 
-Type: `map(String)`
+Type: `list(String)`
 
 ### <a name="input_disabled_routes"></a> [disabled\_routes](#input\_disabled\_routes)
 
-Description: A map of disabled routes for worker
+Description: A list of disabled routes for worker
 
-Type: `map(String)`
+Type: `list(String)`
 
 ### <a name="input_worker_name"></a> [worker\_name](#input\_worker\_name)
 

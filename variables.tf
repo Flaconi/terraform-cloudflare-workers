@@ -15,13 +15,13 @@ variable "zone_id" {
 }
 
 variable "enabled_routes" {
-  description = "A map of routes enabled for worker"
-  type        = map(String)
+  description = "A list of routes enabled for worker"
+  type        = list(String)
 }
 
 variable "disabled_routes" {
-  description = "A map of disabled routes for worker"
-  type        = map(String)
+  description = "A list of disabled routes for worker"
+  type        = list(String)
 }
 
 variable "worker_name" {
