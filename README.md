@@ -27,7 +27,7 @@ This Terraform module allows you to set up environment variables and key-value (
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.13.5 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~>= 1.8 |
 | <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.12.0 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
@@ -92,6 +92,22 @@ Description: worker name
 Type: `string`
 
 Default: `null`
+
+### <a name="input_zones"></a> [zones](#input\_zones)
+
+Description: Map of zone configurations. Each zone can have zone\_id, domain\_name, and optional disabled\_routes. When provided, this takes precedence over single zone\_id/domain\_name variables.
+
+Type:
+
+```hcl
+map(object({
+    zone_id        = string
+    domain_name    = string
+    disabled_routes = optional(set(string), [])
+  }))
+```
+
+Default: `{}`
 
 <!-- TFDOCS_INPUTS_END -->
 

@@ -39,3 +39,13 @@ variable "worker_name" {
   type        = string
   default     = null
 }
+
+variable "zones" {
+  description = "Map of zone configurations. Each zone can have zone_id, domain_name, and optional disabled_routes. When provided, this takes precedence over single zone_id/domain_name variables."
+  type = map(object({
+    zone_id         = string
+    domain_name     = string
+    disabled_routes = optional(set(string), [])
+  }))
+  default = {}
+}
