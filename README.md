@@ -49,11 +49,17 @@ Description: A map of KV database names
 
 Type: `map(string)`
 
+## Optional Inputs
+
+The following input variables are optional (have default values):
+
 ### <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id)
 
 Description: Zone ID on cloudflare for the domain
 
 Type: `string`
+
+Default: `null`
 
 ### <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name)
 
@@ -61,11 +67,7 @@ Description: Domain name
 
 Type: `string`
 
-### <a name="input_enabled_routes"></a> [enabled\_routes](#input\_enabled\_routes)
-
-Description: A list of routes enabled for worker
-
-Type: `set(string)`
+Default: `null`
 
 ### <a name="input_disabled_routes"></a> [disabled\_routes](#input\_disabled\_routes)
 
@@ -73,15 +75,23 @@ Description: A list of disabled routes for worker
 
 Type: `set(string)`
 
+Default: `[]`
+
+### <a name="input_enabled_routes"></a> [enabled\_routes](#input\_enabled\_routes)
+
+Description: A list of routes enabled for worker
+
+Type: `set(string)`
+
+Default: `[]`
+
 ### <a name="input_worker_name"></a> [worker\_name](#input\_worker\_name)
 
 Description: worker name
 
 Type: `string`
 
-## Optional Inputs
-
-No optional inputs.
+Default: `null`
 
 <!-- TFDOCS_INPUTS_END -->
 
