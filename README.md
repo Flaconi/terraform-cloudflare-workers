@@ -27,7 +27,7 @@ This Terraform module allows you to set up environment variables and key-value (
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~>= 1.8 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.8 |
 | <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.12.0 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
@@ -101,8 +101,8 @@ Type:
 
 ```hcl
 map(object({
-    zone_id        = string
-    domain_name    = string
+    zone_id         = string
+    domain_name     = string
     disabled_routes = optional(set(string), [])
   }))
 ```
