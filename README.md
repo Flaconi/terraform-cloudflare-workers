@@ -27,7 +27,7 @@ This Terraform module allows you to set up environment variables and key-value (
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.13.5 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.8 |
 | <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.12.0 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
@@ -49,11 +49,17 @@ Description: A map of KV database names
 
 Type: `map(string)`
 
+## Optional Inputs
+
+The following input variables are optional (have default values):
+
 ### <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id)
 
 Description: Zone ID on cloudflare for the domain
 
 Type: `string`
+
+Default: `null`
 
 ### <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name)
 
@@ -61,11 +67,7 @@ Description: Domain name
 
 Type: `string`
 
-### <a name="input_enabled_routes"></a> [enabled\_routes](#input\_enabled\_routes)
-
-Description: A list of routes enabled for worker
-
-Type: `set(string)`
+Default: `null`
 
 ### <a name="input_disabled_routes"></a> [disabled\_routes](#input\_disabled\_routes)
 
@@ -73,15 +75,39 @@ Description: A list of disabled routes for worker
 
 Type: `set(string)`
 
+Default: `[]`
+
+### <a name="input_enabled_routes"></a> [enabled\_routes](#input\_enabled\_routes)
+
+Description: A list of routes enabled for worker
+
+Type: `set(string)`
+
+Default: `[]`
+
 ### <a name="input_worker_name"></a> [worker\_name](#input\_worker\_name)
 
 Description: worker name
 
 Type: `string`
 
-## Optional Inputs
+Default: `null`
 
-No optional inputs.
+### <a name="input_zones"></a> [zones](#input\_zones)
+
+Description: Map of zone configurations. Each zone can have zone\_id, domain\_name, and optional disabled\_routes. When provided, this takes precedence over single zone\_id/domain\_name variables.
+
+Type:
+
+```hcl
+map(object({
+    zone_id         = string
+    domain_name     = string
+    disabled_routes = optional(set(string), [])
+  }))
+```
+
+Default: `{}`
 
 <!-- TFDOCS_INPUTS_END -->
 
