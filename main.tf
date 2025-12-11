@@ -35,7 +35,7 @@ resource "cloudflare_workers_route" "enabled" {
     for zone_key, zone in local.zones_normalized :
     local.should_create_routes && length(var.enabled_routes) > 0 && zone.zone_id != null && zone.domain_name != null ? {
       for route in var.enabled_routes :
-      "${zone_key}-${route}" => {
+      "${zone.domain_name}${route}" => {
         zone_id     = zone.zone_id
         domain_name = zone.domain_name
         route       = route
@@ -53,7 +53,7 @@ resource "cloudflare_workers_route" "disabled" {
     for zone_key, zone in local.zones_normalized :
     local.should_create_routes && length(zone.disabled_routes) > 0 && zone.zone_id != null && zone.domain_name != null ? {
       for route in zone.disabled_routes :
-      "${zone_key}-${route}" => {
+      "${zone.domain_name}${route}" => {
         zone_id     = zone.zone_id
         domain_name = zone.domain_name
         route       = route
