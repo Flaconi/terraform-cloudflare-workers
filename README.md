@@ -18,7 +18,7 @@ This Terraform module allows you to set up environment variables and key-value (
 
 | Name | Version |
 |------|---------|
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.12.0 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.20.0 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -28,7 +28,7 @@ This Terraform module allows you to set up environment variables and key-value (
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.8 |
-| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.12.0 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.20.0 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
@@ -43,15 +43,17 @@ Description: The accountId on cloudflare
 
 Type: `string`
 
+## Optional Inputs
+
+The following input variables are optional (have default values):
+
 ### <a name="input_kv_database_names"></a> [kv\_database\_names](#input\_kv\_database\_names)
 
 Description: A map of KV database names
 
 Type: `map(string)`
 
-## Optional Inputs
-
-The following input variables are optional (have default values):
+Default: `{}`
 
 ### <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id)
 
@@ -104,6 +106,30 @@ map(object({
     zone_id         = string
     domain_name     = string
     disabled_routes = optional(set(string), [])
+  }))
+```
+
+Default: `{}`
+
+### <a name="input_secrets_store_id"></a> [secrets\_store\_id](#input\_secrets\_store\_id)
+
+Description: Identifier of the Cloudflare Secrets Store the secrets are written into. Required when secrets is not empty.
+
+Type: `string`
+
+Default: `null`
+
+### <a name="input_secrets"></a> [secrets](#input\_secrets)
+
+Description: A map of secret name to its configuration, written into the Secrets Store given by secrets\_store\_id. Cloudflare never returns a secret value, so terraform can create and update one but cannot detect a change made outside terraform. Scopes must be listed alphabetically.
+
+Type:
+
+```hcl
+map(object({
+    value   = string
+    comment = optional(string)
+    scopes  = optional(list(string), ["workers"])
   }))
 ```
 
