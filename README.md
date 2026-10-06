@@ -140,7 +140,9 @@ Default: `{}`
 <!-- TFDOCS_OUTPUTS_START -->
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_kv_namespaces"></a> [kv\_namespaces](#output\_kv\_namespaces) | Map of kv\_database\_names key to the id of the created KV namespace, so other stacks can bind or publish the id without copying it by hand. |
 
 <!-- TFDOCS_OUTPUTS_END -->
 
