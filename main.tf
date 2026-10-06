@@ -65,3 +65,21 @@ resource "cloudflare_workers_route" "disabled" {
   pattern = format("%s%s", each.value.domain_name, each.value.route)
   script  = null
 }
+
+resource "cloudflare_secrets_store_secret" "this" {
+  for_each = var.secrets
+
+  account_id = var.account_id
+  store_id   = var.secrets_store_id
+  name       = each.key
+  value      = each.value.value
+  comment    = each.value.comment
+  scopes     = each.value.scopes
+
+  lifecycle {
+    precondition {
+      condition     = var.secrets_store_id != null
+      error_message = "secrets_store_id must be set when secrets are provided."
+    }
+  }
+}
