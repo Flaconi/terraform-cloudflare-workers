@@ -18,7 +18,7 @@ This Terraform module allows you to set up environment variables and key-value (
 
 | Name | Version |
 |------|---------|
-| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.20.0 |
+| <a name="provider_cloudflare"></a> [cloudflare](#provider\_cloudflare) | ~> 5.28.1 |
 
 <!-- TFDOCS_PROVIDER_END -->
 
@@ -28,7 +28,7 @@ This Terraform module allows you to set up environment variables and key-value (
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.8 |
-| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.20.0 |
+| <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 5.28.1 |
 
 <!-- TFDOCS_REQUIREMENTS_END -->
 
